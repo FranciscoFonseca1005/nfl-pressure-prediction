@@ -1,0 +1,34 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Project data
+data/raw/*
+data/interim/*
+data/processed/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# Tests and coverage
+.pytest_cache/
+.coverage
+
+# Local configuration and secrets
+.env
+.env.*
+
+# VS Code and operating system
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
