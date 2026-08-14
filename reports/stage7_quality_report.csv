@@ -1,0 +1,17 @@
+check_id,area,status,result,decision
+M7-01,Development scope,PASS,Only actual weeks 1–7 were materialized.,Preserve week 8 for final testing.
+M7-02,Approved split,PASS,"Train has 27,950 rows; validation has 3,865; shared plays = 0.",Keep weeks 1–6 for train and week 7 for validation.
+M7-03,Feature contract,PASS,50 numeric and 1 categorical predictor; no forbidden features.,Preserve the approved Stage 6 feature contract.
+M7-04,Temporal tuning,PASS,"Three expanding folds validated weeks 4, 5, and 6.",Use only past weeks to predict each tuning week.
+M7-05,Search budget,PASS,24 configurations and 72 fold evaluations completed.,Keep the search controlled and reproducible.
+M7-06,Locked configurations,PASS,ExtraTrees_C10 and HistGradientBoosting_C07 locked.,Do not alter hyperparameters after week 7 evaluation.
+M7-07,Validation comparison,PASS,"Three models evaluated on the same 3,865 rows and 427 positives.",Compare candidates with identical validation observations.
+M7-08,Candidate selection,PASS,Exactly one candidate selected: unweighted logistic regression.,Retain the simpler model because advanced gains were not stable.
+M7-09,Uncertainty analysis,PASS,"2,000 play-cluster bootstrap iterations; AP interval includes 0.",Do not claim a reliable Extra Trees improvement.
+M7-10,Prediction traceability,PASS,"3,865 traceable predictions; duplicate keys = 0; missing = 0.",Preserve player-play keys with all candidate probabilities.
+M7-11,Decile analysis,PASS,Ten deciles per model and 427 positives preserved.,"Use deciles only for ranking diagnostics, not thresholding."
+M7-12,Probability diagnostics,PASS,PR and ten-bin calibration analyses completed for three models.,Retain AP as primary; use calibration as supporting evidence.
+M7-13,Serialization,PASS,Reloaded pipeline reproduced probabilities exactly.,Persist the complete selected pipeline.
+M7-14,Threshold policy,PASS,No classification threshold was selected.,"Defer precision, recall, F1, and confusion matrix decisions."
+M7-15,Test protection,PASS,X_test and y_test do not exist; week 8 was not materialized.,Keep test completely untouched.
+M7-16,Artifacts,PASS,Eight pre-quality artifacts exist and are non-empty.,Add the quality report as the ninth Stage 7 artifact.
