@@ -1,0 +1,11 @@
+check_id,check,passed,status
+M6-01,Approved temporal split preserved,True,PASS
+M6-02,No plays shared between splits,True,PASS
+M6-03,Feature contract contains 51 predictors,True,PASS
+M6-04,Forbidden variables excluded,True,PASS
+M6-05,Training and validation matrices complete,True,PASS
+M6-06,Selected model improves validation AP,True,PASS
+M6-07,Unweighted logistic pipeline selected,True,PASS
+M6-08,Serialized pipeline reproduces probabilities,True,PASS
+M6-09,Test matrices were not created,True,PASS
+M6-10,All Stage 6 artifacts exist,True,PASS
