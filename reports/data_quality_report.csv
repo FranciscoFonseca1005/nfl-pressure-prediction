@@ -1,0 +1,15 @@
+check_id,area,status,result,decision
+DQ-01,Raw files,PASS,"10 data files; 0.240 GiB; no missing, unexpected, or empty files",Preserve raw files unchanged
+DQ-02,Parquet structure,PASS,"8,314,178 rows; 16 columns; identical schemas",Parquet source files can be concatenated before assigning actual_week
+DQ-03,Temporal partition,PASS_WITH_NOTE,Physical files do not correspond one-to-one with actual NFL weeks,Assign actual_week from gameId date; never split by Parquet filename
+DQ-04,PFF key integrity,PASS,"188,254 player-play rows; 8,557 plays; no missing or duplicated keys",Use gameId + playId + nflId as the player-play key
+DQ-05,PFF missingness,PASS_WITH_NOTE,Missingness is structural by PFF role; Pass Rush hit/hurry/sack fields are complete,Do not impute PFF missing values globally
+DQ-06,PFF value domains,PASS,"All indicator fields contain only 0, 1, or missing; categorical strings are clean",Retain raw categorical values for later analysis
+DQ-07,Team metadata,PASS_WITH_NOTE,"32 tracking teams covered; unused aliases: LAR, OAK, SD, STL",Retain historical aliases in reference metadata
+DQ-08,Tracking entity identity,PASS,"361,486 frames; missing identity/orientation occurs only for football",Treat football records separately from players
+DQ-09,Tracking frame integrity,PASS,Exactly 23 entities per frame; no duplicated entity-frame keys or frame gaps,Use gameId + playId + frameId + entity as tracking grain
+DQ-10,Manual snap coverage,PASS_WITH_NOTE,"8,532 valid plays (99.708%); 25 excluded plays",Use only explicit ball_snap; exclude plays without a manual marker
+DQ-11,Tracking time,PASS_WITH_NOTE,"6 timestamp gaps, all occurring before the snap",Do not assume uniform pre-snap timing; snap and post-snap sequence remain valid
+DQ-12,Tracking numeric ranges,PASS_WITH_NOTE,"Rare player boundary observations: x=112, y=828",Do not remove or cap globally; reassess at the snap snapshot
+DQ-13,PFF-tracking coverage,PASS,"188,254 matched keys; 0 PFF-only; 0 tracking-only",Proceed with a validated one-to-one player-play relationship
+DQ-14,Snap exclusion impact,PASS_WITH_NOTE,"36,259 Pass Rush records retained; 103 excluded",Document the 0.283% Pass Rush reduction
