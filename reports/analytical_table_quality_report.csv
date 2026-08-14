@@ -1,0 +1,13 @@
+check_id,area,status,result
+AT-01,Analytical grain,PASS,"36,259 rows; 36,259 unique rusher keys; 8,531 plays"
+AT-02,Target source parity,PASS,"Exact key, position, and target match against Stage 3 Parquet"
+AT-03,Temporal coverage,PASS,Actual weeks 1-8; weekly rows and positives match source labels
+AT-04,Missing and finite values,PASS,0 missing values; 0 non-finite predictors
+AT-05,Target integrity,PASS,"Binary target; 4,214 positives; 11.622% prevalence"
+AT-06,Column inventory,PASS,70 columns assigned exactly once to a documented role
+AT-07,Predictor schema,PASS,51 eligible predictors: 50 numeric and 1 categorical
+AT-08,Leakage exclusion,PASS,"No target components, outcome scouting columns, or QC flags in predictors"
+AT-09,Metadata separation,PASS,"Identifiers, actual_week, audit fields, and target excluded from predictors"
+AT-10,Feature ranges,PASS,Distances and magnitudes nonnegative; cyclical and alignment features valid
+AT-11,Predictor variability,PASS,No constant predictor columns
+AT-12,Football anomaly isolation,PASS,football_y excluded; football_x retained as longitudinal snap reference
