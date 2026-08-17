@@ -1,0 +1,5 @@
+outcome,validation_week_7,test_week_8
+true_negative,2259,2670
+false_positive,1179,1270
+false_negative,211,264
+true_positive,216,240

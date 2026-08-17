@@ -1,0 +1,132 @@
+{
+  "artifacts": [
+    {
+      "artifact": "final_model",
+      "path": "models/stage9_final_model.joblib",
+      "sha256": "d073466a12a72378bb2e7ecaba43563307d207e876ea54878e38a1c9d8a3cce2",
+      "size_bytes": 4070
+    },
+    {
+      "artifact": "pretest_manifest",
+      "path": "reports/stage9_pretest_manifest.json",
+      "sha256": "50b78d6ebf64b8e527ac617a4c06a8888c11a2a7d3cdfbeb817df8db8df462c7",
+      "size_bytes": 3784
+    },
+    {
+      "artifact": "test_predictions",
+      "path": "reports/stage9_test_predictions.parquet",
+      "sha256": "fb03df6fb64bb01cb04d359a13cf7157fb8acd191a85498dab06552964d0d9f4",
+      "size_bytes": 69103
+    },
+    {
+      "artifact": "test_metrics",
+      "path": "reports/stage9_test_metrics.csv",
+      "sha256": "fa218dc4b5074c786496bec348ab7cf7c8170264ed01845b13ab2bc81e2e59c1",
+      "size_bytes": 302
+    },
+    {
+      "artifact": "confusion_matrix",
+      "path": "reports/stage9_confusion_matrix.csv",
+      "sha256": "29721427824d7f0f772632a292b35ca99487dcf36888219dce1c89c6265ea0cd",
+      "size_bytes": 59
+    },
+    {
+      "artifact": "validation_test_comparison",
+      "path": "reports/stage9_validation_test_comparison.csv",
+      "sha256": "b8d404ce7527c580361e3fa66b7ed2f848e5e55ee8b8eb19c79bd47f5197de13",
+      "size_bytes": 1077
+    },
+    {
+      "artifact": "confusion_comparison",
+      "path": "reports/stage9_confusion_comparison.csv",
+      "sha256": "6834f0e7156355eba8682e232c1d0615f6e8cf7d32c4749a763eac6bc9353e52",
+      "size_bytes": 132
+    },
+    {
+      "artifact": "average_precision_lift",
+      "path": "reports/stage9_average_precision_lift.csv",
+      "sha256": "4b91d00560f93bf44f9a4ad0fd7d7eb80f0239cc50f4c53f958bb3b7f5fc0697",
+      "size_bytes": 206
+    },
+    {
+      "artifact": "test_deciles",
+      "path": "reports/stage9_test_deciles.csv",
+      "sha256": "9ac1e293a3ac39db8433f4c3e502a8c73e61f5c4cde9c7fca355a122c66c5299",
+      "size_bytes": 1337
+    },
+    {
+      "artifact": "calibration_summary",
+      "path": "reports/stage9_calibration_summary.csv",
+      "sha256": "38ff4a59b01fd0642827efbd57796863440b702556e6e30c7ddc53ace4a17db9",
+      "size_bytes": 350
+    },
+    {
+      "artifact": "decile_stability_chart",
+      "path": "reports/stage9_decile_stability.png",
+      "sha256": "5e79be3c59c817e8494033972d700f3413046812a83d89cc4ae33bbce741a989",
+      "size_bytes": 130433
+    },
+    {
+      "artifact": "final_quality_report",
+      "path": "reports/stage9_final_quality_report.csv",
+      "sha256": "2bf5cda51e4b629f730b23f4b7098300bd02dd9f0edc0c9c264e51e5f63b1863",
+      "size_bytes": 5369
+    }
+  ],
+  "confusion_matrix": {
+    "false_negatives": 264,
+    "false_positives": 1270,
+    "true_negatives": 2670,
+    "true_positives": 240
+  },
+  "final_metrics": {
+    "actual_positive_rate": 0.11341134113411341,
+    "average_precision": 0.15775008696279033,
+    "f1": 0.23833167825223436,
+    "log_loss": 0.34781248418273736,
+    "precision": 0.15894039735099338,
+    "predicted_positive_rate": 0.3397839783978398,
+    "recall": 0.47619047619047616,
+    "roc_auc": 0.5968898557731045,
+    "specificity": 0.6776649746192893
+  },
+  "model_contract": {
+    "feature_count": 51,
+    "path": "models/stage9_final_model.joblib",
+    "sha256": "d073466a12a72378bb2e7ecaba43563307d207e876ea54878e38a1c9d8a3cce2",
+    "threshold": 0.12485514806532311,
+    "training_weeks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "post_test_adjustments": {
+    "calibration": false,
+    "features": false,
+    "hyperparameters": false,
+    "model": false,
+    "threshold": false
+  },
+  "project": "nfl-pressure-prediction",
+  "quality": {
+    "checks": 93,
+    "failures": 0,
+    "passes": 93,
+    "report_sha256": "2bf5cda51e4b629f730b23f4b7098300bd02dd9f0edc0c9c264e51e5f63b1863"
+  },
+  "source_commit": "4a4c650",
+  "stage": 9,
+  "status": "final_test_evaluation_completed_without_post_test_adjustment",
+  "test_contract": {
+    "materialization_count": 1,
+    "plays": 1031,
+    "positives": 504,
+    "rows": 4444,
+    "week": 8
+  }
+}

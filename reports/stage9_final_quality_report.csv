@@ -1,0 +1,94 @@
+check_id,area,observed,expected,status
+ST9-01,Policy status,locked_before_test_evaluation,locked_before_test_evaluation,PASS
+ST9-02,Week 8 initial state,sealed_not_accessed,sealed_not_accessed,PASS
+ST9-03,Pipeline class,Pipeline,Pipeline,PASS
+ST9-04,Final estimator,LogisticRegression,LogisticRegression,PASS
+ST9-05,Hyperparameters,"{'C': 1.0, 'class_weight': None, 'max_iter': 2000, 'random_state': 42, 'solver': 'lbfgs'}","{'C': 1.0, 'class_weight': None, 'max_iter': 2000, 'random_state': 42, 'solver': 'lbfgs'}",PASS
+ST9-06,Feature count,51,51,PASS
+ST9-07,Feature uniqueness,51,51,PASS
+ST9-08,Feature order,True,True,PASS
+ST9-09,Analytical target,pressure,pressure,PASS
+ST9-10,Final training weeks,"[1, 2, 3, 4, 5, 6, 7]","[1, 2, 3, 4, 5, 6, 7]",PASS
+ST9-11,Final test week,8,8,PASS
+ST9-12,Single final fit,True,True,PASS
+ST9-13,Test excluded from fit,False,False,PASS
+ST9-14,Locked threshold,0.12485514806532311,0.12485514806532311,PASS
+ST9-15,Post-test changes,True,True,PASS
+ST9-16,Stage 7 quality,"(16, np.int64(16))","(16, 16)",PASS
+ST9-17,Stage 8 quality,"(20, np.int64(20))","(20, 20)",PASS
+ST9-18,Parquet total rows,36259,36259,PASS
+ST9-19,Parquet total columns,70,70,PASS
+ST9-20,Development shape,"(31815, 70)","(31815, 70)",PASS
+ST9-21,Development weeks,"[1, 2, 3, 4, 5, 6, 7]","[1, 2, 3, 4, 5, 6, 7]",PASS
+ST9-22,Development positives,3710,3710,PASS
+ST9-23,Development plays,7500,7500,PASS
+ST9-24,Duplicate rusher-play keys,0,0,PASS
+ST9-25,Target classes,"[0, 1]","[0, 1]",PASS
+ST9-26,Missing model values,0,0,PASS
+ST9-27,Model features present,0,0,PASS
+ST9-28,Numeric predictor types,True,True,PASS
+ST9-29,Identifiers excluded,[],[],PASS
+ST9-30,Week 8 rows in memory,0,0,PASS
+ST9-31,Validation rows,3865,3865,PASS
+ST9-32,Validation weeks,[7],[7],PASS
+ST9-33,Validation plays,913,913,PASS
+ST9-34,Validation positives,427,427,PASS
+ST9-35,Duplicate validation keys,0,0,PASS
+ST9-36,Probability column,probability_logistic_regression,probability_logistic_regression,PASS
+ST9-37,Finite probabilities,True,True,PASS
+ST9-38,Probability range,"(0.02825845903634364, 0.44986998289681784)","within [0, 1]",PASS
+ST9-39,Key alignment,"{'both': 3865, 'left_only': 0, 'right_only': 0}",{'both': 3865},PASS
+ST9-40,Target alignment,True,True,PASS
+ST9-41,Reproduced rows,3865,3865,PASS
+ST9-42,Reproduced key alignment,"{'both': 3865, 'left_only': 0, 'right_only': 0}",{'both': 3865},PASS
+ST9-43,Maximum probability difference,0.0,<= 1e-12,PASS
+ST9-44,Training weeks,"[1, 2, 3, 4, 5, 6, 7]","[1, 2, 3, 4, 5, 6, 7]",PASS
+ST9-45,Training rows,31815,31815,PASS
+ST9-46,Training positives,3710,3710,PASS
+ST9-47,Training feature count,51,51,PASS
+ST9-48,Final feature order,True,True,PASS
+ST9-49,Final hyperparameters,"{'C': 1.0, 'class_weight': None, 'max_iter': 2000, 'random_state': 42, 'solver': 'lbfgs'}","{'C': 1.0, 'class_weight': None, 'max_iter': 2000, 'random_state': 42, 'solver': 'lbfgs'}",PASS
+ST9-50,Test rows used during fit,0,0,PASS
+ST9-51,Test objects before lock,[],[],PASS
+ST9-52,Final model exported,True,True,PASS
+ST9-53,Reloaded model fitted,True,True,PASS
+ST9-54,Reloaded feature order,True,True,PASS
+ST9-55,Pretest manifest exported,True,True,PASS
+ST9-56,Week 8 status,authorized_not_materialized,authorized_not_materialized,PASS
+ST9-57,Materialization count,1,1,PASS
+ST9-58,Test shape,"(4444, 70)","(4444, 70)",PASS
+ST9-59,Test weeks,[8],[8],PASS
+ST9-60,Test plays,1031,1031,PASS
+ST9-61,Test positives,504,504,PASS
+ST9-62,Duplicate test keys,0,0,PASS
+ST9-63,Missing test model values,0,0,PASS
+ST9-64,X_test shape,"(4444, 51)","(4444, 51)",PASS
+ST9-65,X_test feature order,True,True,PASS
+ST9-66,Development/test play overlap,0,0,PASS
+ST9-67,Development/test rusher-key overlap,0,0,PASS
+ST9-68,Locked model unchanged,d073466a12a72378bb2e7ecaba43563307d207e876ea54878e38a1c9d8a3cce2,d073466a12a72378bb2e7ecaba43563307d207e876ea54878e38a1c9d8a3cce2,PASS
+ST9-69,Prediction rows,4444,4444,PASS
+ST9-70,Finite test probabilities,True,True,PASS
+ST9-71,Probability range,"(0.027318573951420674, 0.3890794379183773)","within [0, 1]",PASS
+ST9-72,Locked threshold applied,0.12485514806532311,0.12485514806532311,PASS
+ST9-73,Confusion total,4444,4444,PASS
+ST9-74,Classification labels,"['false_negative', 'false_positive', 'true_negative', 'true_positive']","['false_negative', 'false_positive', 'true_negative', 'true_positive']",PASS
+ST9-75,Locked model unchanged,d073466a12a72378bb2e7ecaba43563307d207e876ea54878e38a1c9d8a3cce2,d073466a12a72378bb2e7ecaba43563307d207e876ea54878e38a1c9d8a3cce2,PASS
+ST9-76,Validation deciles,10,10,PASS
+ST9-77,Test deciles,10,10,PASS
+ST9-78,Validation decile rows,3865,3865,PASS
+ST9-79,Test decile rows,4444,4444,PASS
+ST9-80,Test mean probability order,True,True,PASS
+ST9-81,Locked model unchanged,True,True,PASS
+ST9-82,Chart datasets,2,2,PASS
+ST9-83,Chart decile rows,20,20,PASS
+ST9-84,Chart exported,True,True,PASS
+ST9-85,Locked model unchanged,True,True,PASS
+ST9-86,Environment versions,5,5,PASS
+ST9-87,Required artifact presence,6,6,PASS
+ST9-88,Locked artifact hashes,4,4,PASS
+ST9-89,Validation metric reproduction,3,3,PASS
+ST9-90,Final tabular exports,8,8,PASS
+ST9-91,Final model hash,d073466a12a72378bb2e7ecaba43563307d207e876ea54878e38a1c9d8a3cce2,d073466a12a72378bb2e7ecaba43563307d207e876ea54878e38a1c9d8a3cce2,PASS
+ST9-92,Final threshold,0.12485514806532311,0.12485514806532311,PASS
+ST9-93,Week 8 materializations,1,1,PASS

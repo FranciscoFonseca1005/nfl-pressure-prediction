@@ -1,0 +1,124 @@
+{
+  "evaluation_contract": {
+    "allow_calibration_after_test": false,
+    "allow_feature_changes_after_test": false,
+    "allow_model_changes_after_test": false,
+    "allow_threshold_changes_after_test": false,
+    "probability_output": "predict_proba(X_test)[:, 1]",
+    "test_week": 8,
+    "threshold": 0.12485514806532311
+  },
+  "final_model": {
+    "estimator_class": "LogisticRegression",
+    "feature_count": 51,
+    "hyperparameters": {
+      "C": 1.0,
+      "class_weight": null,
+      "max_iter": 2000,
+      "random_state": 42,
+      "solver": "lbfgs"
+    },
+    "ordered_feature_names": [
+      "football_x",
+      "quarterback_y",
+      "rusher_speed",
+      "rusher_acceleration",
+      "rusher_displacement",
+      "quarterback_speed",
+      "quarterback_acceleration",
+      "quarterback_displacement",
+      "rusher_qb_longitudinal_gap",
+      "rusher_qb_lateral_offset",
+      "rusher_qb_absolute_lateral_gap",
+      "rusher_qb_distance",
+      "rusher_x_relative_to_ball",
+      "quarterback_depth_behind_ball",
+      "nearest_blocker_speed",
+      "nearest_blocker_acceleration",
+      "nearest_blocker_displacement",
+      "nearest_blocker_longitudinal_offset",
+      "nearest_blocker_lateral_offset",
+      "nearest_blocker_absolute_lateral_offset",
+      "nearest_blocker_distance",
+      "play_pass_rusher_count",
+      "play_pass_blocker_count",
+      "protection_count_advantage",
+      "rusher_orientation_sin",
+      "rusher_orientation_cos",
+      "rusher_direction_sin",
+      "rusher_direction_cos",
+      "quarterback_orientation_sin",
+      "quarterback_orientation_cos",
+      "quarterback_direction_sin",
+      "quarterback_direction_cos",
+      "nearest_blocker_orientation_sin",
+      "nearest_blocker_orientation_cos",
+      "nearest_blocker_direction_sin",
+      "nearest_blocker_direction_cos",
+      "rusher_velocity_x",
+      "rusher_velocity_y",
+      "quarterback_velocity_x",
+      "quarterback_velocity_y",
+      "nearest_blocker_velocity_x",
+      "nearest_blocker_velocity_y",
+      "rusher_orientation_to_qb_alignment",
+      "rusher_direction_to_qb_alignment",
+      "rusher_velocity_toward_qb",
+      "rusher_qb_closing_speed",
+      "nearest_blocker_orientation_to_rusher_alignment",
+      "nearest_blocker_direction_to_rusher_alignment",
+      "nearest_blocker_velocity_toward_rusher",
+      "rusher_blocker_closing_speed",
+      "rusher_position_lined_up"
+    ],
+    "path": "models/stage9_final_model.joblib",
+    "pipeline_class": "Pipeline",
+    "sha256": "d073466a12a72378bb2e7ecaba43563307d207e876ea54878e38a1c9d8a3cce2"
+  },
+  "project": "nfl-pressure-prediction",
+  "software_versions": {
+    "joblib": "1.5.3",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.14.0",
+    "scikit_learn": "1.9.0"
+  },
+  "source_artifacts": {
+    "analytical_table": {
+      "columns": 70,
+      "path": "data/processed/pass_rush_analytical_table.parquet",
+      "rows": 36259,
+      "sha256": "b7198bf0f347a8bf17f9d468f801f61bd3ee4400a28dd161cb8613302aff79a5"
+    },
+    "stage7_selected_model": {
+      "path": "models/stage7_selected_model.joblib",
+      "sha256": "bbd5cf914cc56b3688ea55f44f79f683d954312a8346a54b13ac738c9be12a21"
+    },
+    "stage8_selected_policy": {
+      "path": "reports/stage8_selected_policy.json",
+      "sha256": "52e6658ea7ec42e74f000cc42fdbd51c46a22fe55849e5c24c76e6f42c61828c"
+    }
+  },
+  "source_commit": "4a4c650",
+  "stage": 9,
+  "status": "final_model_locked_before_test_access",
+  "training_contract": {
+    "fit_once": true,
+    "logistic_iterations": [
+      86
+    ],
+    "positives": 3710,
+    "rows": 31815,
+    "test_rows_used_during_fit": 0,
+    "weeks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "week_8_status": "authorized_not_materialized"
+}
