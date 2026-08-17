@@ -1,0 +1,177 @@
+{
+  "final_evaluation_protocol": {
+    "allow_calibration_after_test": false,
+    "allow_feature_changes_after_test": false,
+    "allow_model_changes_after_test": false,
+    "allow_threshold_changes_after_test": false,
+    "apply_locked_threshold": true,
+    "materialize_week_8_once": true,
+    "probability_metrics": [
+      "average_precision",
+      "roc_auc",
+      "log_loss"
+    ],
+    "probability_output": "predict_proba(X_test)[:, 1]",
+    "threshold_metrics": [
+      "precision",
+      "recall",
+      "f1",
+      "specificity",
+      "confusion_matrix",
+      "predicted_positive_rate"
+    ]
+  },
+  "final_training_recipe": {
+    "estimator_creation": "sklearn.base.clone(stage7_selected_model)",
+    "feature_order_source": "model_contract.ordered_feature_names",
+    "fit_once": true,
+    "random_state": 42,
+    "source_table": "data/processed/pass_rush_analytical_table.parquet",
+    "target_column": "pressure",
+    "test_data_used_during_fit": false,
+    "test_week": 8,
+    "training_weeks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "model_contract": {
+    "categorical_predictors": [
+      "rusher_position_lined_up"
+    ],
+    "final_estimator_class": "LogisticRegression",
+    "hyperparameters": {
+      "C": 1.0,
+      "class_weight": null,
+      "max_iter": 2000,
+      "random_state": 42,
+      "solver": "lbfgs"
+    },
+    "numeric_predictor_count": 50,
+    "ordered_feature_names": [
+      "football_x",
+      "quarterback_y",
+      "rusher_speed",
+      "rusher_acceleration",
+      "rusher_displacement",
+      "quarterback_speed",
+      "quarterback_acceleration",
+      "quarterback_displacement",
+      "rusher_qb_longitudinal_gap",
+      "rusher_qb_lateral_offset",
+      "rusher_qb_absolute_lateral_gap",
+      "rusher_qb_distance",
+      "rusher_x_relative_to_ball",
+      "quarterback_depth_behind_ball",
+      "nearest_blocker_speed",
+      "nearest_blocker_acceleration",
+      "nearest_blocker_displacement",
+      "nearest_blocker_longitudinal_offset",
+      "nearest_blocker_lateral_offset",
+      "nearest_blocker_absolute_lateral_offset",
+      "nearest_blocker_distance",
+      "play_pass_rusher_count",
+      "play_pass_blocker_count",
+      "protection_count_advantage",
+      "rusher_orientation_sin",
+      "rusher_orientation_cos",
+      "rusher_direction_sin",
+      "rusher_direction_cos",
+      "quarterback_orientation_sin",
+      "quarterback_orientation_cos",
+      "quarterback_direction_sin",
+      "quarterback_direction_cos",
+      "nearest_blocker_orientation_sin",
+      "nearest_blocker_orientation_cos",
+      "nearest_blocker_direction_sin",
+      "nearest_blocker_direction_cos",
+      "rusher_velocity_x",
+      "rusher_velocity_y",
+      "quarterback_velocity_x",
+      "quarterback_velocity_y",
+      "nearest_blocker_velocity_x",
+      "nearest_blocker_velocity_y",
+      "rusher_orientation_to_qb_alignment",
+      "rusher_direction_to_qb_alignment",
+      "rusher_velocity_toward_qb",
+      "rusher_qb_closing_speed",
+      "nearest_blocker_orientation_to_rusher_alignment",
+      "nearest_blocker_direction_to_rusher_alignment",
+      "nearest_blocker_velocity_toward_rusher",
+      "rusher_blocker_closing_speed",
+      "rusher_position_lined_up"
+    ],
+    "pipeline_class": "Pipeline",
+    "preprocessing": {
+      "categorical": "OneHotEncoder(handle_unknown='ignore', sparse_output=False)",
+      "numeric": "StandardScaler"
+    },
+    "selected_model": "LogisticRegression_unweighted",
+    "total_predictor_count": 51
+  },
+  "project": "nfl-pressure-prediction",
+  "schema_version": 1,
+  "software_versions": {
+    "joblib": "1.5.3",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "python": "3.14.0",
+    "scikit_learn": "1.9.0"
+  },
+  "source_artifacts": {
+    "selected_model": {
+      "path": "models/stage7_selected_model.joblib",
+      "sha256": "bbd5cf914cc56b3688ea55f44f79f683d954312a8346a54b13ac738c9be12a21"
+    },
+    "stage7_quality_report": {
+      "path": "reports/stage7_quality_report.csv",
+      "sha256": "cea9a77191a5cf3ba97e15f076d3421a6b80c6a317c4d059496ea54a33c0dc8d"
+    },
+    "validation_predictions": {
+      "path": "reports/stage7_validation_predictions.parquet",
+      "sha256": "57d2f95f6d7b668bf200cd4bfa63f488070505ba8e97d33e76c83e250da7a7d1"
+    }
+  },
+  "stage": 8,
+  "status": "locked_before_test_evaluation",
+  "target_contract": {
+    "analytical_target": "pressure",
+    "definition": "pff_hurry OR pff_hit OR pff_sack",
+    "positive_class": 1,
+    "validation_artifact_target": "pressure_actual"
+  },
+  "threshold_contract": {
+    "candidate_threshold_count": 3865,
+    "comparison_rule": "probability >= threshold",
+    "maximum_f1_tie_count": 1,
+    "reference_threshold": 0.5,
+    "selection_dataset": "actual_week == 7",
+    "selection_metric": "f1",
+    "threshold": 0.12485514806532311,
+    "tie_break_rule": "highest threshold among exact F1 ties"
+  },
+  "validation_evidence": {
+    "actual_positive_rate": 0.11047865459249677,
+    "actual_positives": 427,
+    "confusion_matrix": {
+      "false_negatives": 211,
+      "false_positives": 1179,
+      "true_negatives": 2259,
+      "true_positives": 216
+    },
+    "f1": 0.23710208562019758,
+    "plays": 913,
+    "precision": 0.15483870967741936,
+    "predicted_positive_rate": 0.36093143596377747,
+    "predicted_positives": 1395,
+    "recall": 0.5058548009367682,
+    "rows": 3865,
+    "specificity": 0.6570680628272252
+  },
+  "week_8_status": "sealed_not_accessed"
+}

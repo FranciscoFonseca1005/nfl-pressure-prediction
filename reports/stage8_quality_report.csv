@@ -1,0 +1,21 @@
+check_id,area,status,result,decision
+ST8-01,Input artifacts,PASS,3 required Stage 7 artifacts found,Use only closed Stage 7 artifacts
+ST8-02,Source integrity,PASS,SHA-256 generated for every source artifact,Lock source identity before test
+ST8-03,Prior quality,PASS,16/16 Stage 7 controls PASS,Accept the closed Stage 7 checkpoint
+ST8-04,Model identity,PASS,Pipeline with unweighted LogisticRegression,Preserve the selected Stage 7 model family
+ST8-05,Model parameters,PASS,C=1.0; solver=lbfgs; max_iter=2000; random_state=42,Lock approved hyperparameters
+ST8-06,Feature contract,PASS,51 unique predictors stored in model order,Reuse this exact order during final evaluation
+ST8-07,Temporal scope,PASS,Validation weeks present: [7],Select threshold exclusively on week 7
+ST8-08,Validation counts,PASS,"3,865 rows; 913 plays; 427 positives",Preserve the approved validation population
+ST8-09,Key integrity,PASS,0 duplicate rusher-play keys,Require one decision per rusher-play key
+ST8-10,Target integrity,PASS,"Observed target classes: [0, 1]",Preserve binary pressure target
+ST8-11,Probability integrity,PASS,"Range [0.028258, 0.449870]","Require finite probabilities within [0, 1]"
+ST8-12,Metric reproduction,PASS,AP=0.151899; ROC-AUC=0.600006; Log Loss=0.342382,Require exact reproduction within rounding tolerance
+ST8-13,Threshold candidates,PASS,"3,865 unique candidates evaluated",Evaluate every probability-changing threshold
+ST8-14,Threshold selection,PASS,threshold=0.124855148065; maximum F1=0.237102; ties=1,Maximize F1 and choose highest threshold on ties
+ST8-15,Selected policy,PASS,TN=2259; FP=1179; FN=211; TP=216; F1=0.237102,Lock selected validation behavior
+ST8-16,Reference threshold,PASS,threshold=0.5 predicts zero positive cases,Retain 0.5 only as a descriptive reference
+ST8-17,Sensitivity,PASS,Seven scenarios evaluated; selected F1 remains maximal,Use sensitivity descriptively without reselection
+ST8-18,Decision table,PASS,"3,865 auditable row-level decisions; no duplicate keys",Export validation decisions with selected classes
+ST8-19,Locked protocol,PASS,"Model, features, threshold, training and test protocol locked",Forbid post-test adjustment
+ST8-20,Test isolation,PASS,X_test/y_test absent; validation contains only week 7; week 8 not accessed,Keep week 8 sealed until final evaluation
